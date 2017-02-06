@@ -21,7 +21,7 @@ class DraggableComponent extends Component {
     constructor() {
         super();
         this.state = {
-            items: ['Link Label', 'Link Label', 'Link Label']
+            items: ['Link Label 1', 'Link Label 2', 'Link Label 3']
         }
     }
 
@@ -35,7 +35,7 @@ class DraggableComponent extends Component {
     render() {
         return (
             <div>
-                <SortableList items={this.state.items} onSortEnd={this.onSortEnd} />
+                <SortableList items={this.state.items} axis="x" onSortEnd={this.onSortEnd} />
             </div>
         );
     }
