@@ -1,54 +1,94 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-
-ul li{
-  display:  inline;
-  list-style-type: none
+ul li {
+    display: inline;
+    list-style-type: none
 }
 
 ul {
-  display: flex;
-  align-items: flex-end;
-  /*background-color: red;*/
-  float: right
+    display: flex;
+    align-items: flex-end;
+    /*background-color: red;*/
+    float: right
 }
+
 .draggable_child {
-  list-style-type: none;
-  border-width: 1px;
-  border-style: solid;
-  margin: 10px;
-  padding-left: 10px;
-  padding-right: 10px
+    list-style-type: none;
+    border-width: 1px;
+    border-style: solid;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px
 }
 
 .logoBlock {
-  display: flex;
-  margin-top: 10px
+    display: flex;
+    margin-top: 10px
 }
 
 .logoimage {
-  margin-right: 10px
+    margin-right: 10px
+}
+
+.cms_body {
+    display: flex;
+    flex-direction: row
+}
+
+.cms_body .side_menu {
+    /*background-color: red;*/
+    width: 25%;
+    overflow: visible;
+}
+
+.cms_body .contents {
+    /*background-color: green;*/
+    width: 75%;
+    z-index: -1;
+}
+
+.settings_drop_down {
+    padding: 10px;
+    border-color: lightgrey;
+    border-style: solid;
+    background-color: green;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    z-index: 999;
+}
+
+.color_picker_group {
+    display: flex;
+    flex-direction: row
+}
+
+.colorpicker_wrapper {
+    display: none;
 }
