@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 import SideBar from './SideBar'
 
+import { connect } from 'react-redux'
+import Draggable  from './Draggable'
+
 class Body extends Component {
     render() {
         return (
@@ -12,7 +15,16 @@ class Body extends Component {
                         <SideBar />
 
                         </div>
-                    <div className="contents" >Content</div>
+                    <div style={{
+                        backgroundColor : this.props.bgcolor,
+                        height : 500,
+                        width : '75%'
+                    }}>
+                    
+                    <Draggable />
+                    
+                    
+                    </div>
                 </div>
             </div>
         );
@@ -22,4 +34,13 @@ class Body extends Component {
 }
 
 
-export default Body
+
+const mapStateToProps = (state, ownProps) => {
+    console.log(state)
+    return {
+        bgcolor: state.bodybg
+    }
+}
+
+
+export default connect(mapStateToProps, null)(Body)

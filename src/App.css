@@ -92,3 +92,18 @@ ul {
 .colorpicker_wrapper {
     display: none;
 }
+
+.body_draggable ul {
+    float: none;
+    width: 500px;
+    margin: 50px;
+}
+
+.body_draggable li {
+    list-style-type: none;
+    border-width: 1px;
+    border-style: solid;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px
+}

@@ -3,12 +3,19 @@ import logo from './logo.svg';
 import './App.css';
 import Example from './Example'
 
+import { Provider } from 'react-redux'
+import { createStore , combineReducers } from 'redux'
+import reducers from './redux/reducers'
+
+
+
+
 class App extends Component {
   render() {
     return (
-      <div>
+       <Provider store={createStore(reducers)}>
         <Example />
-      </div>
+      </Provider>
     );
   }
 }

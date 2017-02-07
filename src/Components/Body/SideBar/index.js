@@ -1,14 +1,28 @@
 import React, { Component } from 'react'
 import { SketchPicker } from 'react-color';
 
+import {connect} from 'react-redux'
+
+import * as actions from '../../../redux/actions'
+
 class SideBar extends Component {
     constructor(){
         super();
         this.state = {
             isColorPickerActive : false,
-            isDropDownActive : false
+            isDropDownActive : false,
+            bodyColor : ""
         }
+        this.handleColorChange = this.handleColorChange.bind(this)
     }
+
+    handleColorChange(color,event){
+        console.log(color.hex)
+        console.log(this.props)
+        this.props.UpdateBG(color.hex)
+        // this.setState({bodyColor : color.hex})
+    }
+
     render() {
         return (
             <div>
@@ -36,7 +50,9 @@ class SideBar extends Component {
                             </div>
 
                             <div style={{display : this.state.isColorPickerActive ? 'block' : 'none'}}>
-                            <SketchPicker/>
+                            <SketchPicker
+                            onChange = {this.handleColorChange}
+                            />
                             </div>
                         </div>
 
@@ -56,5 +72,6 @@ class SideBar extends Component {
     }
 }
 
+export default connect(null, actions)(SideBar)
 
-export default SideBar
+
