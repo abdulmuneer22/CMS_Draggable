@@ -20,6 +20,7 @@ class SideBar extends Component {
         console.log(color.hex)
         console.log(this.props)
         this.props.UpdateBG(color.hex)
+        this.props.SetHomeStyle(color.hex)
         // this.setState({bodyColor : color.hex})
     }
 
@@ -36,7 +37,7 @@ class SideBar extends Component {
                     <div className="color_picker_group">
                         <div>
                             <p>Type</p>
-                            <select style={{height : '20'}}>
+                            <select style={{height : 20}}>
                                 <option value="Solid">Solid</option>
                                 <option value="Solid">Solid</option>
                                 <option value="Solid">Solid</option>
