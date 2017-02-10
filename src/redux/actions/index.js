@@ -10,7 +10,7 @@ export const UpdateBG = (color) => {
 
 
 export const GetHomeStyle = () => {
-    const HomeStyleEndPoint = "http://192.168.1.3:8080/home_style"
+    const HomeStyleEndPoint = "http://localhost:8080/home_style"
     return dispatch => {
         let HomeStyle = axios.get(HomeStyleEndPoint)
         .then((response)=>{
@@ -31,7 +31,7 @@ export const GetHomeStyle = () => {
 
 
 export const SetHomeStyle = (color) => {
-    const endpoint  = "http://192.168.1.3:8080/home_style"
+    const endpoint  = "http://localhost:8080/home_style"
     // let style = {"homebgColor" : "#EE5E1A"}
     return dispatch => {
         let HomeStyle = axios.post(endpoint,
