@@ -12,9 +12,16 @@ var server = app.listen(8080, function () {
    console.log("Server  listening at http://%s:%s", host, port)
 })
 
-
+app.all('/home_style',(req,res,next)=>{
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+  return next()
+})
 app.get('/home_style',(req,res)=>{
-
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+        res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
         mongo.connect(URL,(err,db)=>{
         if(!err){
             db.collection('HomeStyle',(err,collection)=>{
@@ -31,7 +38,7 @@ app.get('/home_style',(req,res)=>{
         }
     })
     }
-    
+
 )
 
 
@@ -39,7 +46,7 @@ app.post('/home_style',(req,res)=>{
     console.log("Updating Style To Database")
     const HomeBgColor = req.body.homebgColor
     console.log(HomeBgColor)
-    
+
 
     mongo.connect(URL,(err,db)=>{
         if(!err){
@@ -47,7 +54,7 @@ app.post('/home_style',(req,res)=>{
                 "target" : "homebgcolor"
             },{
                 "target" : "homebgcolor",
-                "bgcolor":"#000"
+                "bgcolor": HomeBgColor
             },(err, res)=>{
                 if(err){
                     console.log(err)
@@ -56,9 +63,9 @@ app.post('/home_style',(req,res)=>{
             db.close()
             res.send("Updated BG Successfully")
 
-            
+
         }
     })
-    
+
 
 })
